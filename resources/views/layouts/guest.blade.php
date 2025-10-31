@@ -1,30 +1,81 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
+    <meta name="keywords" content="{{ env('APP_KEYWORDS') }}">
+    <meta name="author" content="{{ env('APP_AUTHOR') }}">
+    <meta name="robots" content="index, follow">
+    <title>{{ env('APP_NAME') }}</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset(env('APP_FAVICON_PATH')) }}">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
+
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/tabler-icons/tabler-icons.min.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+</head>
+
+<body class="account-page bg-white">
+
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+        <div class="account-content">
+            <div class="login-wrapper login-new">
+                <div class="row w-100">
+                    <div class="col-lg-5 mx-auto">
+                        <div class="login-content user-login">
+                            <div class="login-logo">
+                                <img src="{{ asset('assets/img/logo.svg') }}" alt="img">
+                                <a href="index.html" class="login-logo logo-white">
+                                    <img src="{{ asset('assets/img/logo-white.svg') }}" alt="Img">
+                                </a>
+                            </div>
+
+                            {{ $slot }}
+
+                        </div>
+                        <div class="my-4 d-flex justify-content-center align-items-center copyright-text">
+                            <p>Copyright &copy; 2025 {{ env('APP_AUTHOR') }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- /Main Wrapper -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+
+    <!-- Feather Icon JS -->
+    <script src="{{ asset('assets/js/feather.min.js') }}"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom JS -->
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
+</body>
+
 </html>
