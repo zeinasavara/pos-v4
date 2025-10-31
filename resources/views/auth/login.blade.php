@@ -9,32 +9,28 @@
                     <h4>Akses panel aplikasi menggunakan email dan kata sandi Anda.</h4>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email <span class="text-danger"> *</span></label>
+                    <label class="form-label">Email <code>*</code></label>
                     <div class="input-group">
-                        <input type="text" name="email" value="{{ old('email') }}" placeholder="Masukkan email"
+                        <input type="text" name="email" value="{{ old('email') }}" placeholder="Masukkan email anda"
                             class="form-control border-end-0" autofocus>
                         <span class="input-group-text border-start-0">
                             <i class="ti ti-mail"></i>
                         </span>
                     </div>
                     @error('email')
-                        <div class="invalid-feedback d-block">
-                            {{ $message }}
-                        </div>
+                        <x-input-error :message="$message" />
                     @enderror
+
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Password <span class="text-danger">
-                            *</span></label>
+                    <label class="form-label">Password <code>*</code></label>
                     <div class="pass-group">
                         <input type="password" name="password" placeholder="****************"
                             class="form-control pass-input">
                         <span class="ti toggle-password ti-eye-off text-gray-9"></span>
                     </div>
                     @error('password')
-                        <div class="invalid-feedback d-block">
-                            {{ $message }}
-                        </div>
+                        <x-input-error :message="$message" />
                     @enderror
                 </div>
                 <div class="form-login">

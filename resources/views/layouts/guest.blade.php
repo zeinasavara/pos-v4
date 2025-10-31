@@ -18,14 +18,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
-
     <!-- Tabler Icon CSS -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/tabler-icons/tabler-icons.min.css') }}">
-
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
@@ -42,7 +39,7 @@
         <div class="account-content">
             <div class="login-wrapper login-new">
                 <div class="row w-100">
-                    <div class="col-lg-5 mx-auto">
+                    <div class="col-lg-4 mx-auto">
                         <div class="login-content user-login">
                             <div class="login-logo">
                                 <img src="{{ asset('assets/img/logo.svg') }}" alt="img">
@@ -66,13 +63,10 @@
 
     <!-- jQuery -->
     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-
     <!-- Feather Icon JS -->
     <script src="{{ asset('assets/js/feather.min.js') }}"></script>
-
     <!-- Bootstrap Core JS -->
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-
     <!-- Custom JS -->
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
